@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 
-def hello(name):
-    return f"I am: {name}"
+# 1. Library imports
+import uvicorn ##ASGI
+from fastapi import FastAPI
 
-if __name__ == "__main__":
-    print(hello("Mike"))    
+# 2. Create the app object
+app = FastAPI()
 
-#app = Flask(__name__)    
+# 3. Index route, opens automatically on http://127.0.0.1:8000
+@app.get('/')
+def index():
+    return {'message': 'Hello, World'}

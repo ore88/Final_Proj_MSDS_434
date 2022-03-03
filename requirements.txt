@@ -10,4 +10,7 @@ scikit-learn>=0.18
 pandas>=0.19
 pytest--cov
 fastapi
-uvicorn[standard]
+uvicorn
+gunicorn==19.9.0
+uvloop
+httptools 
