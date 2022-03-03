@@ -1,13 +1,17 @@
 #!/usr/bin/env python
 
-# 1. Library imports
-import uvicorn ##ASGI
-from fastapi import FastAPI
+import os
 
-# 2. Create the app object
-app = FastAPI()
+from flask import Flask
 
-# 3. Index route, opens automatically on http://127.0.0.1:8000
-@app.get('/')
-def index():
-    return {'message': 'Hello, World'}
+app = Flask(__name__)
+
+
+@app.route("/")
+def hello_world():
+    name = os.environ.get("NAME", "World")
+    return "Hello {}!".format(name)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
