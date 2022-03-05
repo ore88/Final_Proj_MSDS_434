@@ -25,3 +25,6 @@ To get started do this:
     * 'echo - used to name/show'
     'source ~/.venv/bin/activate'
 
+## Build Docker Contain
+    * 'docker build'
+    * 'docker tag image ID 
